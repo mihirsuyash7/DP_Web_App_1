@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
+  <title>{{title}}</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +11,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content:center;
+      height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,7 +27,44 @@
     <!-- place navbar here -->
   </header>
   <main>
-
+    <div class="container">
+      <form method="POST" enctype="multipart/form-data">
+        <h2>Transaction Details Entry Page</h2>
+        <br><br>
+        <label for="trans_type">Select Transaction Type : </label>
+        <select name="trans_type" id="trans_type">
+          <option value="PAYMENT">PAYMENT</option>
+          <option value="CASH_OUT">CASH_OUT</option>
+          <option value="DEBIT">DEBIT</option>
+          <option value="TRANSFER">TRANSFER</option>
+          <option value="CASH_IN">CASH_IN</option>
+        </select>
+        <br><br>
+        <label for="tans_amt">Enter Transaction Amount : </label>
+        <input type="number" name="trans_amt" placeholder="Enter Transaction Amount">
+        <br><br>
+        <label for="tans_nameOrig">Enter Original Account Number : </label>
+        <input type="text" name="trans_nameOrig" placeholder="Enter Original Account Number">
+        <br><br>
+        <label for="tans_oldbalanceOrg">Enter Old Balance of Original Account : </label>
+        <input type="number" name="trans_oldbalanceOrg" placeholder="Enter Old Balance">
+        <br><br>
+        <label for="tans_newbalanceOrig">Enter New Balance of Original Account : </label>
+        <input type="number" name="trans_newbalanceOrig" placeholder="Enter New Balance">
+        <br><br>
+        <label for="tans_nameDest">Enter Destination Account Number : </label>
+        <input type="text" name="trans_nameDest" placeholder="Enter Destination Account Number">
+        <br><br>
+        <label for="tans_oldbalanceDest">Enter Old Balance of Destination Account : </label>
+        <input type="number" name="trans_oldbalanceDest" placeholder="Enter Old Balance">
+        <br><br>
+        <label for="tans_newbalanceDest">Enter New Balance of Destination Account : </label>
+        <input type="number" name="trans_newbalanceDest" placeholder="Enter New Balance">
+        <br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+       </form>
+    </div>
   </main>
   <footer>
     <!-- place footer here -->
